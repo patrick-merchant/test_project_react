@@ -7,7 +7,7 @@ const DisplayPosts = ({ GET_POSTS }) => {
     if (error) return <p>Error :(</p>;
 
     return data.feed.map(({ id, userId, title, body }) => (
-        <div key={ id }>
+        <div className="single-post" key={ id }>
             <h3>{ title }</h3>
             <h4>User ID: { userId }</h4>
             <br />

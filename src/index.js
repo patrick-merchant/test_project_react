@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './custom.scss';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: 'http://localhost:8081/graphql',
@@ -18,21 +18,3 @@ root.render(
     </ApolloProvider>
   </React.StrictMode>
 );
-
-
-
-client
-  .query({
-    query: gql`
-      query getPosts {
-    feed {
-        id
-        userId
-        title
-        body
-        }
-      }
-    `,
-  })
-  .then((result) => console.log(result.data.feed));
-

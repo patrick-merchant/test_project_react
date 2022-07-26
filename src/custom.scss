@@ -1,3 +1,32 @@
 $primary: #6f42c1;
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.navbar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+.navbar a {
+margin-left: 16px;
+text-decoration: none;
+padding: 6px;
+}
+
+.navbar a:hover {
+font-weight: 600;
+}
+
+.page-content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.text-primary {
+    margin-bottom: 30px;
+}

@@ -1,5 +1,8 @@
 import { gql } from '@apollo/client';
 import DisplayPosts from './DisplayPosts';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import NavBar from './NavBar';
+
 
 function App() {
 
@@ -14,13 +17,20 @@ function App() {
     }
   `;
 
-  
+
 
   return (
-    <div className="App container mt-5">
-      <h1 className="text-primary"><i className="bi bi-diagram-2-fill"></i>hello world</h1>
-      <DisplayPosts GET_POSTS={ GET_POSTS } />
-    </div>
+    <BrowserRouter>
+      <div className="App container mt-5">
+        <NavBar />
+        <div className="page-content">
+        <h1 className="text-primary"><i className="bi bi-diagram-2-fill"></i>All Posts:</h1>
+        <Routes>
+          <Route exact path="/" element={<DisplayPosts GET_POSTS={GET_POSTS} />} />
+        </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

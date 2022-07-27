@@ -40,22 +40,22 @@ font-weight: 600;
     color: black;
 }
 
-/* create new blog form */
-.create {
+/* post forms */
+.form {
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
   }
-  .create label {
+  .form label {
     text-align: left;
     display: block;
   }
-  .create h2 {
+  .form h2 {
     font-size: 20px;
     color: #6f42c1;
     margin-bottom: 30px;
   }
-  .create input, .create textarea, .create select {
+  .form input, .form textarea, .form select {
     width: 100%;
     padding: 6px 10px;
     margin: 10px 0;
@@ -63,7 +63,7 @@ font-weight: 600;
     box-sizing: border-box;
     display: block;
   }
-  .create button {
+  .form button {
     background: #6f42c1;
     color: #fff;
     border: 0;

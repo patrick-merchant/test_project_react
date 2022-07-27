@@ -1,14 +1,22 @@
 import { useMutation, useQuery } from "@apollo/client";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Update from "./Update";
 
-const PostDetails = ({GET_POST_BY_ID, DELETE_POST}) => {
+const PostDetails = ({GET_POST_BY_ID, DELETE_POST, UPDATE_POST}) => {
+
+    const navigate = useNavigate();
+
     const selected = useParams();
     const id = selected.id;
-    const navigate = useNavigate();
+
+    console.log(id);
     
     const { loading, error, data } = useQuery(GET_POST_BY_ID, {
         variables: { id },
-    });
+    });    
+    
+    console.log(data);
 
     const handleDelete = () => {
         deletePost({
@@ -17,15 +25,12 @@ const PostDetails = ({GET_POST_BY_ID, DELETE_POST}) => {
             navigate('/')
         });
     }
-    
+
     const [deletePost] = useMutation(DELETE_POST, {
         refetchQueries: [
             'GetPosts'
         ],
     });
-
-
-    console.log(data);
 
     return ( 
         <div className="post-details">
@@ -34,11 +39,12 @@ const PostDetails = ({GET_POST_BY_ID, DELETE_POST}) => {
             {data && (
                 <article>
                     <h2>{data.search.title}</h2>
-                    <p>Written by {data.search.userId}</p>
+                    <p>Posted by {data.search.userId}</p>
                     <div>{data.search.body}</div>
                     <button onClick={handleDelete}>delete</button>
                 </article>
             )}
+            {data && (<Update UPDATE_POST={UPDATE_POST} data={data} id={id} />)}
         </div>
      );
 }

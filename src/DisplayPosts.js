@@ -1,7 +1,9 @@
 import { useQuery } from "@apollo/client";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const DisplayPosts = ({ GET_POSTS }) => {
+    
     const { loading, error, data } = useQuery(GET_POSTS);
 
     if (loading) return <p>Loading...</p>;

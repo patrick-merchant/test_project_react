@@ -29,6 +29,17 @@ function App() {
 }
   `
 
+const DELETE_POST = gql `
+  mutation DeletePost($id: ID!) {
+    delete(id: $id) {
+        id
+        userId
+        title
+        body
+    }
+  }
+  `
+
   return (
     <BrowserRouter>
       <div className="App container mt-5">
@@ -37,7 +48,7 @@ function App() {
         <h1 className="text-primary"><i className="bi bi-diagram-2-fill"></i>All Posts:</h1>
         <Routes>
           <Route exact path="/" element={<DisplayPosts GET_POSTS={GET_POSTS} />} />
-          <Route path="/:id" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} />} />
+          <Route path="/:id" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} DELETE_POST={DELETE_POST} />} />
         </Routes>
         </div>
       </div>

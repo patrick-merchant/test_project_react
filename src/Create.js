@@ -52,11 +52,11 @@ const Create = ({ CREATE_POST }) => {
                     onChange={(e) => setUserId(e.target.value)
                     }>
                     <option value={"default"}>Choose an option</option>
-                    <option value="0-user">User 1</option>
-                    <option value="1-user">User 2</option>
-                    <option value="2-user">User 2</option>
-                    <option value="3-user">User 2</option>
-                    <option value="4-user">User 2</option>
+                    <option value="0">User 0</option>
+                    <option value="1">User 1</option>
+                    <option value="2">User 2</option>
+                    <option value="3">User 3</option>
+                    <option value="4">User 4</option>
                 </select>
                 {!isPending && <button>Add Post</button>}
                 {isPending && <button disabled>Adding Post...</button>}

@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const DisplayPosts = ({ GET_POSTS }) => {
     const { loading, error, data } = useQuery(GET_POSTS);
@@ -12,6 +13,9 @@ const DisplayPosts = ({ GET_POSTS }) => {
             <h4>User ID: { userId }</h4>
             <br />
             <p>{ body }</p>
+            <Link to={`/${ id }`}>
+                <button>View details</button>
+            </Link>
         </div>
     ));
 }

@@ -7,8 +7,6 @@ import NavBar from './NavBar';
 
 function App() {
 
-  let id = "0";
-
   const GET_POSTS = gql`
     query GetPosts {
       feed {
@@ -21,8 +19,8 @@ function App() {
   `;
 
   const GET_POST_BY_ID = gql`
-  query GetPostById {
-    search(id: ":ID-post") {
+  query GetPostById($id: ID!) {
+    search(id: $id) {
         id
         userId
         title
@@ -39,7 +37,7 @@ function App() {
         <h1 className="text-primary"><i className="bi bi-diagram-2-fill"></i>All Posts:</h1>
         <Routes>
           <Route exact path="/" element={<DisplayPosts GET_POSTS={GET_POSTS} />} />
-          <Route path="/create" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} />} />
+          <Route path="/:id" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} />} />
         </Routes>
         </div>
       </div>

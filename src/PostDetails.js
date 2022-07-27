@@ -1,7 +1,15 @@
 import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 
 const PostDetails = ({GET_POST_BY_ID}) => {
-    const { loading, error, data } = useQuery(GET_POST_BY_ID);
+    const selected = useParams();
+    const id = selected.id;
+    
+    const { loading, error, data } = useQuery(GET_POST_BY_ID, {
+        variables: { id },
+    });
+
+    
 
     return ( 
         <div className="post-details">
@@ -9,9 +17,9 @@ const PostDetails = ({GET_POST_BY_ID}) => {
             {error && <div> {error}</div>}
             {data && (
                 <article>
-                    <h2>{data.feed.title}</h2>
-                    <p>Written by {data.feed.userId}</p>
-                    <div>{data.feed.body}</div>
+                    <h2>{data.search.title}</h2>
+                    <p>Written by {data.search.userId}</p>
+                    <div>{data.search.body}</div>
                     <button>delete</button>
                 </article>
             )}

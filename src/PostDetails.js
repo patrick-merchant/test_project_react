@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useNavigate, useParams } from "react-router-dom";
 
-const PostDetails = ({GET_POST_BY_ID, DELETE_POST}) => {
+const PostDetails = ({GET_POST_BY_ID, DELETE_POST, GET_POSTS}) => {
     const selected = useParams();
     const id = selected.id;
     const navigate = useNavigate();
@@ -16,15 +16,17 @@ const PostDetails = ({GET_POST_BY_ID, DELETE_POST}) => {
         }).then(() => {
             navigate('/')
         });
-
-
     }
     
-    const [deletePost, { loading: deleteLoading, error: deleteError, data: deleteData }] = useMutation(DELETE_POST);
+    const [deletePost] = useMutation(DELETE_POST, {
+        refetchQueries: [
+            {query: GET_POSTS},
+            'GetPosts'
+        ],
+    });
 
 
     console.log(data);
-    console.log(deleteData);
 
     return ( 
         <div className="post-details">

@@ -48,7 +48,7 @@ const DELETE_POST = gql `
         <h1 className="text-primary"><i className="bi bi-diagram-2-fill"></i>All Posts:</h1>
         <Routes>
           <Route exact path="/" element={<DisplayPosts GET_POSTS={GET_POSTS} />} />
-          <Route path="/:id" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} DELETE_POST={DELETE_POST} GET_POSTS={GET_POSTS} />} />
+          <Route path="/:id" element={<PostDetails GET_POST_BY_ID={GET_POST_BY_ID} DELETE_POST={DELETE_POST} />} />
         </Routes>
         </div>
       </div>

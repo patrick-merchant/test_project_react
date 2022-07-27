@@ -31,7 +31,7 @@ const Create = ({ CREATE_POST }) => {
 
     return (
         <div className="form">
-            <h2>Add a new post</h2>
+            <h2 id="create-heading">Add a new post</h2>
             <form onSubmit={handleSubmit}>
                 <label>Post title:</label>
                 <input 
@@ -59,9 +59,6 @@ const Create = ({ CREATE_POST }) => {
                 </select>
                 {!isPending && <button>Add Post</button>}
                 {isPending && <button disabled>Adding Post...</button>}
-                <p>{title}</p>
-                <p>{body}</p>
-                <p>{userId}</p>
                 </form>
         </div>
     );

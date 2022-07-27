@@ -37,12 +37,12 @@ const PostDetails = ({GET_POST_BY_ID, DELETE_POST, UPDATE_POST}) => {
             { loading && <div>Loading...</div>}
             {error && <div> {error}</div>}
             {data && (
-                <article>
+                <div className="inspected-post">
                     <h2>{data.search.title}</h2>
                     <p>Posted by {data.search.userId}</p>
-                    <div>{data.search.body}</div>
+                    <p>{data.search.body}</p>
                     <button onClick={handleDelete}>delete</button>
-                </article>
+                </div>
             )}
             {data && (<Update UPDATE_POST={UPDATE_POST} data={data} id={id} />)}
         </div>

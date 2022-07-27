@@ -31,7 +31,7 @@ const Update = ({ UPDATE_POST, id, data }) => {
 
     return (
         <div className="form">
-            <h2>Update Post</h2>
+            <h2 id="update-heading">Update Post</h2>
             <form onSubmit={handleSubmit}>
                 <label>Post title:</label>
                 <input 
@@ -58,9 +58,6 @@ const Update = ({ UPDATE_POST, id, data }) => {
                 </select>
                 {!isPending && <button>Update Post</button>}
                 {isPending && <button disabled>Updating Post...</button>}
-                <p>{title}</p>
-                <p>{body}</p>
-                <p>{userId}</p>
                 </form>
         </div>
     )

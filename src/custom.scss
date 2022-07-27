@@ -2,6 +2,34 @@ $primary: #6f42c1;
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+
+button {
+  background: #fff;
+  color: #6f42c1;
+  border: 1px solid #6f42c1;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.inspected-post {
+  background-color: #CBC3E3;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 2px solid #6f42c1;
+    color: black;
+}
+
+#update-heading {
+  margin-top: 50px;
+}
+
+#create-heading {
+  margin-top: 40px;
+}
+
 .navbar {
     padding: 20px;
     display: flex;
@@ -12,7 +40,9 @@ $primary: #6f42c1;
   }
 
 .navbar a {
-margin-left: 16px;
+font-size: 20px;
+margin-left: 8px;
+margin-right: 8px;
 text-decoration: none;
 padding: 6px;
 }
@@ -25,10 +55,6 @@ font-weight: 600;
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
-}
-
-.text-primary {
-    margin-bottom: 30px;
 }
 
 .single-post {

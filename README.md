@@ -11,7 +11,7 @@
 - Build a React frontend to display the data using https://www.apollographql.com/docs/react/.
 
 ## Outcome:
-This repo contains the React code for the test project. This frontend utilises a GraphQL API, found here: https://github.com/patrick-merchant/test_project_graphql.
+This repo contains the React code for the test project. This frontend utilises a GraphQL API, found here: https://github.com/patrick-merchant/test_project_graphql. The API has full CRUD functionality, which this frontend utilises.
 
 ## Running the project:
 - In this repo, run `npm install` and then `npm start` to install dependecies and run the development server.
